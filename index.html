@@ -491,6 +491,28 @@
                     شكراً لمشاركتكم الاحتفال معنا. ترقبو المرة الجاية!
                 </p>
             </div>
+
+            <!-- Admin Screen -->
+            <div id="adminScreen" class="screen">
+                <div class="header">
+                    <h1 style="color: #003d7a;">لوحة الإدارة 📊</h1>
+                </div>
+                <div style="margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="background: #e8f4ff; padding: 16px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 24px; font-weight: 700; color: #003d7a;" id="adminCoffeeLeft">150</div>
+                        <div style="color: #666; font-size: 12px;">قهوة متبقية</div>
+                    </div>
+                    <div style="background: #e8f4ff; padding: 16px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 24px; font-weight: 700; color: #003d7a;" id="adminPizzaLeft">150</div>
+                        <div style="color: #666; font-size: 12px;">بيتزا متبقية</div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px; max-height: 400px; overflow-y: auto;">
+                    <div style="font-weight: 600; margin-bottom: 12px; text-align: right;">الموظفون والأكواد:</div>
+                    <div id="adminList" style="font-size: 12px; direction: rtl; text-align: right;"></div>
+                </div>
+                <button id="adminResetBtn" class="secondary-btn" style="margin-top: 12px;">إعادة تعيين البيانات</button>
+            </div>
         </div>
     </div>
 
@@ -500,6 +522,7 @@
         let currentEmail = '';
         let currentType = '';
         let usedEmails = JSON.parse(localStorage.getItem('mw_usedEmails') || '{}');
+        let couponHistory = JSON.parse(localStorage.getItem('mw_couponHistory') || '[]');
 
         function showScreen(screenId) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -583,7 +606,14 @@
             }
 
             usedEmails[currentEmail] = true;
+            couponHistory.push({
+                email: currentEmail,
+                type: type,
+                code: code,
+                date: new Date().toLocaleString('ar-SA')
+            });
             localStorage.setItem('mw_usedEmails', JSON.stringify(usedEmails));
+            localStorage.setItem('mw_couponHistory', JSON.stringify(couponHistory));
             updateCounts();
 
             showScreen('codeScreen');
@@ -606,6 +636,41 @@
             document.getElementById('email').value = '';
             document.getElementById('errorMsg').textContent = '';
             showScreen('loginScreen');
+        });
+
+        // Admin Panel
+        function updateAdminPanel() {
+            document.getElementById('adminCoffeeLeft').textContent = coffeeCount;
+            document.getElementById('adminPizzaLeft').textContent = pizzaCount;
+
+            let html = '';
+            couponHistory.forEach((record, idx) => {
+                html += `<div style="padding: 8px; border-bottom: 1px solid #eee; margin-bottom: 8px;">
+                    <div><strong>${idx + 1}. ${record.email}</strong></div>
+                    <div>الكود: <code style="background: #f0f0f0; padding: 2px 4px;">${record.code}</code></div>
+                    <div style="color: #666; font-size: 11px;">${record.type === 'coffee' ? '☕ قهوة' : '🍕 بيتزا'} • ${record.date}</div>
+                </div>`;
+            });
+            document.getElementById('adminList').innerHTML = html || '<div style="color: #999;">لا توجد بيانات بعد</div>';
+        }
+
+        document.getElementById('adminResetBtn').addEventListener('click', () => {
+            if (confirm('هل تريد فعلاً حذف جميع البيانات؟')) {
+                coffeeCount = 150;
+                pizzaCount = 150;
+                usedEmails = {};
+                couponHistory = [];
+                localStorage.clear();
+                updateCounts();
+                updateAdminPanel();
+                showScreen('loginScreen');
+            }
+        });
+
+        // Admin access - double click on logo
+        document.querySelector('.logo').addEventListener('dblclick', () => {
+            updateAdminPanel();
+            showScreen('adminScreen');
         });
 
         updateCounts();
