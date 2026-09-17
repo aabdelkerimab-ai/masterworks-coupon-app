@@ -495,8 +495,8 @@
     </div>
 
     <script>
-        let coffeeCount = 150;
-        let pizzaCount = 150;
+        let coffeeCount = JSON.parse(localStorage.getItem('mw_coffeeCount') || '150');
+        let pizzaCount = JSON.parse(localStorage.getItem('mw_pizzaCount') || '150');
         let currentEmail = '';
         let currentType = '';
         let usedEmails = JSON.parse(localStorage.getItem('mw_usedEmails') || '{}');
@@ -511,6 +511,8 @@
             document.getElementById('pizzaCountLogin').textContent = pizzaCount;
             document.getElementById('coffeeAvailable').textContent = coffeeCount + ' متوفرة';
             document.getElementById('pizzaAvailable').textContent = pizzaCount + ' متوفرة';
+            localStorage.setItem('mw_coffeeCount', coffeeCount);
+            localStorage.setItem('mw_pizzaCount', pizzaCount);
         }
 
         function generateCode(type) {
