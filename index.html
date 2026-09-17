@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Works - National Day 96 Coupons | عطايا اليوم الوطني 96</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Arabic Typesetting', sans-serif;
+            background: #f5f7fa;
+            color: #1a1a1a;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #003d7a 0%, #00a8cc 100%);
+            z-index: 1000;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 1000;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .decoration {
+            position: fixed;
+            opacity: 0.08;
+            font-size: 300px;
+            pointer-events: none;
+            user-select: none;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .decoration-1 {
+            top: -100px;
+            right: -80px;
+            animation: float 8s ease-in-out infinite;
+            color: rgba(34, 170, 68, 0.15);
+        }
+
+        .decoration-2 {
+            bottom: -150px;
+            left: -120px;
+            animation: float 10s ease-in-out infinite reverse;
+            color: rgba(0, 102, 204, 0.15);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .app-wrapper {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 61, 122, 0.15);
+            border: 1px solid #e0e0e0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            width: 160px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #003d7a;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 61, 122, 0.25);
+            padding: 12px;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .logo span {
+            display: block;
+            line-height: 1.1;
+        }
+
+        .logo .logo-text {
+            font-size: 18px;
+        }
+
+        .logo .logo-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 6px;
+            height: 6px;
+            background: #00a8cc;
+            border-radius: 50%;
+            font-size: 0;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #003d7a;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .header .subtitle-ar {
+            color: #00a8cc;
+            font-size: 14px;
+            font-weight: 500;
+            direction: rtl;
+            margin-top: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #003d7a;
+            box-shadow: 0 0 0 2px rgba(0, 61, 122, 0.1);
+        }
+
+        .error-msg {
+            color: #cc3333;
+            font-size: 13px;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #003d7a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        button:hover:not(:disabled) {
+            background: #002952;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: #e8f4ff;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 61, 122, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-weight: 600;
+            font-size: 18px;
+            color: #003d7a;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        .coupon-buttons {
+            display: grid;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .coupon-btn {
+            padding: 20px;
+            background: white;
+            border: 2px solid #003d7a;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .coupon-btn:hover:not(:disabled) {
+            background: #e8f4ff;
+            border-color: #00a8cc;
+        }
+
+        .coupon-btn:disabled {
+            border-color: #ddd;
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f0f0f0;
+        }
+
+        .coupon-icon {
+            font-size: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .coupon-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+
+        .coupon-available {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .email-display {
+            color: #666;
+            font-size: 14px;
+            margin-top: 0.5rem;
+        }
+
+        .code-box {
+            background: #e8f4ff;
+            border: 2px solid #003d7a;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .code-label {
+            color: #003d7a;
+            font-size: 13px;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .code-display {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: monospace;
+            color: #003d7a;
+            letter-spacing: 3px;
+            word-break: break-all;
+        }
+
+        .instructions {
+            background: #f0f9f0;
+            border: 1px solid #90EE90;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .instructions h3 {
+            margin: 0 0 0.75rem 0;
+            font-weight: 600;
+            color: #2d5a2d;
+            font-size: 14px;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #2d5a2d;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .big-emoji {
+            font-size: 56px;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .big-emoji-finish {
+            font-size: 64px;
+            margin: 2rem 0;
+        }
+
+        .secondary-btn {
+            background: white;
+            border: 1px solid #003d7a;
+            color: #003d7a;
+            margin-top: 1rem;
+        }
+
+        .secondary-btn:hover {
+            background: #e8f4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration decoration-1">🇸🇦</div>
+    <div class="decoration decoration-2">🎁</div>
+
+    <div class="container">
+        <div class="app-wrapper">
+            <!-- Login Screen -->
+            <div id="loginScreen" class="screen active">
+                <div class="header">
+                    <div class="logo">
+                        <div class="logo-dot"></div>
+                        <div>
+                            <span class="logo-text">master</span>
+                            <span class="logo-text">works</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <span style="font-size: 56px; font-weight: 900; color: #003d7a; display: block; letter-spacing: -2px;">96</span>
+                    </div>
+                    <h1>National Day Treats 2025</h1>
+                    <p>Celebrate with us</p>
+                </div>
+
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="email">بريد الشركة / Company Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="name@master-works.sa" 
+                            required
+                        >
+                        <div id="errorMsg" class="error-msg"></div>
+                    </div>
+                    <button type="submit">ادخل الآن / Continue</button>
+                </form>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">☕</div>
+                        <div class="stat-number" id="coffeeCountLogin">150</div>
+                        <div class="stat-label">قهوة متبقية</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🍕</div>
+                        <div class="stat-number" id="pizzaCountLogin">150</div>
+                        <div class="stat-label">بيتزا متبقية</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Screen -->
+            <div id="selectScreen" class="screen">
+                <div class="header">
+                    <h1>اختر نصيبك 👇</h1>
+                    <p class="email-display" id="emailDisplay"></p>
+                </div>
+
+                <div class="coupon-buttons">
+                    <button id="coffeeBtn" class="coupon-btn">
+                        <div class="coupon-icon">☕</div>
+                        <div class="coupon-title">قهوة هالف مليون</div>
+                        <div class="coupon-available" id="coffeeAvailable">150 متوفرة</div>
+                    </button>
+
+                    <button id="pizzaBtn" class="coupon-btn">
+                        <div class="coupon-icon">🍕</div>
+                        <div class="coupon-title">بيتزا وسط دومينوز</div>
+                        <div class="coupon-available" id="pizzaAvailable">150 متوفرة</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Code Screen -->
+            <div id="codeScreen" class="screen">
+                <div class="center-text">
+                    <div id="codeEmoji" style="font-size: 48px; margin: 0 0 1rem 0;"></div>
+                    <h1 style="font-size: 24px; font-weight: 600; margin: 0 0 1.5rem 0;">كوبونك جاهز! ✓</h1>
+                </div>
+
+                <div class="code-box">
+                    <div class="code-label">كود الكوبون / Coupon Code</div>
+                    <div class="code-display" id="couponCodeDisplay"></div>
+                </div>
+
+                <div class="instructions">
+                    <h3>طريقة الاستخدام:</h3>
+                    <ol id="instructionsList"></ol>
+                </div>
+
+                <button id="doneBtn">تم / Done</button>
+            </div>
+
+            <!-- Used Screen -->
+            <div id="usedScreen" class="screen center-text">
+                <div class="big-emoji">🎁</div>
+                <h1 style="font-size: 24px; font-weight: 600; margin: 0 0 0.75rem 0;">اخذت نصيبك بالفعل!</h1>
+                <p style="color: #666; margin: 0 0 2rem 0; font-size: 15px;">
+                    كل موظف بياخذ كوبون واحد فقط. ترقبو المرة الجاية 👋
+                </p>
+                <button id="backBtn" class="secondary-btn">رجوع / Back</button>
+            </div>
+
+            <!-- Finished Screen -->
+            <div id="finishedScreen" class="screen center-text">
+                <div class="big-emoji-finish">🎉</div>
+                <h1 style="font-size: 28px; font-weight: 600; margin: 0 0 0.5rem 0;">انتهت الكوبونات! 🇸🇦</h1>
+                <p style="color: #0066CC; font-size: 20px; font-weight: 600; margin: 0 0 1rem 0;">اليوم الوطني السعودي 96</p>
+                <p style="color: #666; margin: 0; font-size: 15px; line-height: 1.6;">
+                    شكراً لمشاركتكم الاحتفال معنا. ترقبو المرة الجاية!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let coffeeCount = 150;
+        let pizzaCount = 150;
+        let currentEmail = '';
+        let currentType = '';
+        let usedEmails = JSON.parse(localStorage.getItem('mw_usedEmails') || '{}');
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        function updateCounts() {
+            document.getElementById('coffeeCountLogin').textContent = coffeeCount;
+            document.getElementById('pizzaCountLogin').textContent = pizzaCount;
+            document.getElementById('coffeeAvailable').textContent = coffeeCount + ' متوفرة';
+            document.getElementById('pizzaAvailable').textContent = pizzaCount + ' متوفرة';
+        }
+
+        function generateCode(type) {
+            const prefix = type === 'coffee' ? 'COFFEE' : 'PIZZA';
+            const random = Math.random().toString(36).substring(2, 8).toUpperCase();
+            return `${prefix}-${random}`;
+        }
+
+        document.getElementById('emailForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const errorMsg = document.getElementById('errorMsg');
+
+            errorMsg.textContent = '';
+
+            if (!email.includes('@master-works.sa')) {
+                errorMsg.textContent = 'يرجى استخدام بريد الشركة @master-works.sa';
+                return;
+            }
+
+            if (usedEmails[email]) {
+                showScreen('usedScreen');
+                document.getElementById('email').value = '';
+                return;
+            }
+
+            currentEmail = email;
+            document.getElementById('emailDisplay').textContent = email;
+            document.getElementById('coffeeBtn').disabled = coffeeCount === 0;
+            document.getElementById('pizzaBtn').disabled = pizzaCount === 0;
+            showScreen('selectScreen');
+        });
+
+        document.getElementById('coffeeBtn').addEventListener('click', () => {
+            if (coffeeCount === 0) {
+                alert('عذراً، انتهت كوبونات القهوة');
+                return;
+            }
+            selectCoupon('coffee');
+        });
+
+        document.getElementById('pizzaBtn').addEventListener('click', () => {
+            if (pizzaCount === 0) {
+                alert('عذراً، انتهت كوبونات البيتزا');
+                return;
+            }
+            selectCoupon('pizza');
+        });
+
+        function selectCoupon(type) {
+            currentType = type;
+            const code = generateCode(type);
+
+            document.getElementById('couponCodeDisplay').textContent = code;
+            document.getElementById('codeEmoji').textContent = type === 'coffee' ? '☕' : '🍕';
+
+            const instructions = type === 'coffee'
+                ? ['حمل تطبيق هالف مليون', 'اختار قهوتك المفضلة', 'ادخل الكود عند الدفع', 'اختار استلام']
+                : ['حمل تطبيق دومينوز', 'اختار بيتزا وسط', 'ادخل الكود عند الدفع', 'اختار استلام'];
+
+            const listHtml = instructions.map(inst => `<li style="text-align: right; direction: rtl;">${inst}</li>`).join('');
+            document.getElementById('instructionsList').innerHTML = listHtml;
+
+            if (type === 'coffee') {
+                coffeeCount--;
+            } else {
+                pizzaCount--;
+            }
+
+            usedEmails[currentEmail] = true;
+            localStorage.setItem('mw_usedEmails', JSON.stringify(usedEmails));
+            updateCounts();
+
+            showScreen('codeScreen');
+        }
+
+        document.getElementById('doneBtn').addEventListener('click', () => {
+            if (coffeeCount === 0 && pizzaCount === 0) {
+                showScreen('finishedScreen');
+            } else {
+                document.getElementById('email').value = '';
+                currentEmail = '';
+                currentType = '';
+                document.getElementById('errorMsg').textContent = '';
+                showScreen('loginScreen');
+                updateCounts();
+            }
+        });
+
+        document.getElementById('backBtn').addEventListener('click', () => {
+            document.getElementById('email').value = '';
+            document.getElementById('errorMsg').textContent = '';
+            showScreen('loginScreen');
+        });
+
+        updateCounts();
+    </script>
+</body>
+</html>
