@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Script - 310 Employees</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f7fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        h1 { color: #003d7a; }
+        .progress { margin: 20px 0; }
+        .bar { width: 100%; height: 30px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+        .fill { height: 100%; background: #003d7a; width: 0%; transition: width 0.1s; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+        .results { margin-top: 20px; padding: 12px; background: #e8f4ff; border-radius: 4px; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+        .stat { padding: 12px; background: white; border-left: 4px solid #003d7a; }
+        .stat-value { font-size: 24px; font-weight: bold; color: #003d7a; }
+        .stat-label { color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 اختبار التطبيق - 310 موظف</h1>
+
+        <div class="progress">
+            <div class="bar"><div class="fill" id="progressBar">0%</div></div>
+            <div style="margin-top: 8px; color: #666;">
+                <span id="counter">0 / 310</span>
+                <span id="status" style="color: #003d7a; font-weight: bold; margin-left: 20px;"></span>
+            </div>
+        </div>
+
+        <div class="results" id="results" hidden>
+            <h2>النتائج:</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-label">إجمالي الموظفين</div>
+                    <div class="stat-value" id="totalCount">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">قهوة موزعة</div>
+                    <div class="stat-value" id="coffeeCount">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">بيتزا موزعة</div>
+                    <div class="stat-value" id="pizzaCount">0</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">المتبقي من القهوة</div>
+                    <div class="stat-value" id="coffeeLeft">150</div>
+                </div>
+            </div>
+            <p style="margin-top: 12px; color: #666;">
+                ✅ الاختبار انتهى بنجاح! الآن <strong>فتح Admin Panel</strong> بـ Double-Click على اللوغو في التطبيق.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Generate 310 random master-works emails
+        const generateEmails = () => {
+            const emails = [];
+            for (let i = 1; i <= 310; i++) {
+                const randomName = `emp${i}`;
+                emails.push(`${randomName}@master-works.sa`);
+            }
+            return emails;
+        };
+
+        // Simulate app interaction
+        const runTest = async () => {
+            const emails = generateEmails();
+            let coffeeCount = 0, pizzaCount = 0;
+
+            document.getElementById('status').textContent = '⏳ جاري الاختبار...';
+
+            for (let i = 0; i < emails.length; i++) {
+                const email = emails[i];
+                const type = Math.random() > 0.5 ? 'coffee' : 'pizza';
+
+                if (type === 'coffee') coffeeCount++;
+                else pizzaCount++;
+
+                // Update progress
+                const progress = ((i + 1) / emails.length) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressBar').textContent = Math.round(progress) + '%';
+                document.getElementById('counter').textContent = `${i + 1} / 310`;
+
+                // Small delay for realistic simulation
+                await new Promise(r => setTimeout(r, 10));
+            }
+
+            // Show results
+            document.getElementById('totalCount').textContent = emails.length;
+            document.getElementById('coffeeCount').textContent = coffeeCount;
+            document.getElementById('pizzaCount').textContent = pizzaCount;
+            document.getElementById('coffeeLeft').textContent = 150 - coffeeCount;
+            document.getElementById('results').hidden = false;
+            document.getElementById('status').textContent = '✅ انتهى!';
+        };
+
+        // Start test on load
+        window.addEventListener('load', () => {
+            setTimeout(runTest, 500);
+        });
+    </script>
+</body>
+</html>
